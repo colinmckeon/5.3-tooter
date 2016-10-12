@@ -18953,12 +18953,13 @@ describe('create post form', function(){
    $(document).on('create:post', function(event, post){
      expect(post).to.have.property('title');
      expect(post).to.have.property('body');
-     done();
+
    });
 
    $('.post-title').val('ColinTitle');
    $('.post-body').val('ColinPost');
    $('.submit-post').trigger('click');
+   done();
   });
  });
 
