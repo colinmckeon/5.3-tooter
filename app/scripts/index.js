@@ -9,11 +9,13 @@ $(function(){
     view.showPosts(posts);
   });
 
+
+console.warn('.myform');
+  $('.myform').on('submit', function(event){
+    event.preventDefault();
+    $(document).trigger('create:post', [{title: "Title", body: "Body"}]);
+
+  });
+
   models.Post.fetch();
-});
-
-$('form').on('submit', function(event){
-  event.preventDefault();
-  $(document).trigger('create:post', [{title: "Title", body: "Body"}]);
-
 });

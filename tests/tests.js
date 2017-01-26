@@ -64,14 +64,17 @@ describe("PostView", function(){
 
 describe('create post form', function(){
  it('should trigger a create:post event on the document with the title and body', function(done){
+
+   require('../app/scripts/index');
+
    $(document).on('create:post', function(event, post){
      expect(post).to.have.property('title');
      expect(post).to.have.property('body');
      done();
    });
 
-   $('.post-title').val('ColinTitle');
-   $('.post-body').val('ColinPost');
-   $('.submit-post').trigger('click');
+   $('.post-title').val('Title');
+   $('.post-body').val('Body');
+   $('.submit-post').click();
   });
  });
